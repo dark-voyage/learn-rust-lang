@@ -12,4 +12,4 @@ Rust ajoyib hujjatlarga, foydali xato xabarlariga ega qulay kompilyatorga va yuq
 # Ishlab chiqarishda
 
 
-Dunyo bo'ylab yuzlab kompaniyalar bugungi kunda ishlab chiqarishda Rustdan tez, kam resursli, platformalararo yechimlar uchun foydalanmoqda. Firefox , Dropbox va Cloudflare kabi siz biladigan va sevadigan dasturlar Rust-dan foydalanadi. Startaplardan tortib yirik korporatsiyalargacha, o‘rnatilgan qurilmalardan tortib kengaytiriladigan veb-xizmatlargacha Rust juda mos keladi.
+Dunyo bo'ylab yuzlab kompaniyalar bugungi kunda ishlab chiqarishda Rustdan tez, kam resursli, platformalararo yechimlar uchun foydalanmoqda. Firefox , Dropbox va Cloudflare kabi siz biladigan va sevadigan dasturlar Rust-dan foydalanadi. Startaplardan tortib yirik korporatsiyalargacha, o'rnatilgan qurilmalardan tortib kengaytiriladigan veb-xizmatlargacha Rust juda mos keladi.
