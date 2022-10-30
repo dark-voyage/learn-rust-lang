@@ -41,3 +41,40 @@ Rust to'g'ri o'rnatilganligini tekshirish uchun shellni oching va quyidagi qator
 ```bash
 $ rustc --version
 ```
+Quyidagi formatda chiqarilgan soʻnggi barqaror versiya uchun versiya raqamini koʻrishingiz, xeshni bajarishingiz va qabul qilingan sanani koʻrishingiz kerak:
+
+```bash
+rustc x.y.z (abcabcabc yyyy-mm-dd)
+```
+Agar siz ushbu ma'lumotni ko'rsangiz, Rustni muvaffaqiyatli o'rnatdingiz! Agar siz ushbu ma'lumotni ko'rmasangiz, Rust %PATH% tizim o'zgaruvchisida quyidagi tarzda ekanligini tekshiring.
+
+Windows CMD-da quyidagilardan foydalaning:
+
+```bash
+> echo %PATH%
+```
+PowerShell-da foydalaning:
+```bash
+> echo $env:Path
+```
+Linux va macOS-da quyidagilardan foydalaning:
+```bash
+echo $PATH
+```
+Agar hammasi to'g'ri bo'lsa va Rust hali ham ishlamasa, yordam olishingiz mumkin bo'lgan bir qancha joylar mavjud. [Eng osoni rasmiy Rust Discord](https://discord.com/invite/rust-lang) -dagi #beginners kanali . U erda sizga yordam beradigan boshqa Rustacean (biz o'zimizni ahmoqona taxallus) bilan suhbatlashishingiz mumkin. Boshqa ajoyib resurslarga [Foydalanuvchilar forumi](https://users.rust-lang.org/) va [Stack Overflow](https://stackoverflow.com/questions/tagged/rust) kiradi .
+
+## Yangilash va o'chirish
+
+Rust orqali o'rnatilgandan so'ng `rustup`, Rustning yangi versiyasi chiqqanda, eng so'nggi versiyaga yangilash oson bo'ladi. Shellingizdan quyidagi yangilash skriptini ishga tushiring:
+```bash
+$ rustup update
+```
+Rust va `rustup`ni o'chirish uchun shelldan quyidagi o'chirish skriptini ishga tushiring:
+```bash
+$ rustup self uninstall
+```
+
+## Mahalliy hujjatlar
+Rust-ning o'rnatilishi hujjatlarning mahalliy nusxasini ham o'z ichiga oladi, shuning uchun uni oflayn rejimda o'qishingiz mumkin. `rustup doc`Brauzeringizda mahalliy hujjatlarni ochish uchun ishga tushiring .
+
+Istalgan vaqtda standart kutubxona tomonidan tur yoki funksiya taqdim etilsa va siz u nima qilishini yoki undan qanday foydalanishni bilmasangiz, bilish uchun amaliy dasturlash interfeysi (API) hujjatlaridan foydalaning!
