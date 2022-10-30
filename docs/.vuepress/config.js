@@ -5,13 +5,14 @@ module.exports = {
         nav: [
           { text: 'Asosiy', link: '/' },
           { text: 'Rust', link: '/guide/' },
-          { text: 'About', link: 'https://github.com/ismoilovdevml' }
+          { text: 'Github', link: 'https://github.com/ismoilovdevml' }
         ],
         sidebar: {
           '/guide/':[
             '',
-            'frontent',
-            'backend'
+            'muqaddima',
+            'kirish',
+            'rust_1.0'
           ]
         }
       }
