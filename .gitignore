@@ -1,5 +1,6 @@
 # Node cached modules
 node_modules
+.yarn
 
 # Jetbrains IDEs
 .idea
