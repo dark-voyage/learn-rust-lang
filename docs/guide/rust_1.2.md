@@ -49,3 +49,56 @@ Agar `Hello, world!` chop etilgan bo'lsa, tabriklaymiz! Siz rasmiy ravishda Rust
 
 Rust dasturi anatomiya
 Keling, ushbu `"Hello, world!"` batafsil dastur. Mana jumboqning birinchi qismi:
+```rust
+fn main() {
+
+}
+```
+Bu satrlar nomli funktsiyani belgilaydi `main.` Funktsiya `main` alohida: bu har doim bajariladigan Rust dasturida ishlaydigan birinchi koddir. `main` Bu erda birinchi qatorda parametrlari bo'lmagan va hech narsa qaytarmaydigan funksiya e'lon qilinadi . Agar parametrlar mavjud bo'lsa, ular qavslar ichiga kiradi `()`.
+
+Funktsiya tanasi ichiga o'ralgan `{}` . Rust barcha funktsiya organlari atrofida jingalak qavslarni talab qiladi. Ochilgan jingalak qavsni funksiya deklaratsiyasi bilan bir qatorga qo'yib, orasiga bitta bo'sh joy qo'yish yaxshi uslubdir.
+Funktsiya tanasi `main` quyidagi kodni o'z ichiga oladi:
+```rust
+    println!("Hello, world!");
+```
+Bu chiziq ushbu kichik dasturdagi barcha ishlarni bajaradi: u matnni ekranga chop etadi. Bu erda to'rtta muhim tafsilotga e'tibor berish kerak.
+
+Birinchidan, Rust uslubi yorliq emas, to'rtta bo'shliq bilan chekinishdir.
+
+Ikkinchidan, `println!` Rust makrosini chaqiradi. Agar u funktsiyani o'rniga chaqirgan bo'lsa, u `println`(siz `!`) sifatida kiritiladi. Rust makroslarini 19-bobda batafsilroq muhokama qilamiz. Hozircha siz shuni bilishingiz kerakki `!` , siz oddiy funksiya o‘rniga makroni chaqirayotgan vositadan foydalanasiz va makrolar har doim ham xuddi shunday qoidalarga amal qilmaydi. funktsiyalari.
+
+Uchinchidan, siz "`Hello, world!"` ni  ko'rasiz. Bu qatorni argument sifatida ga o'tkazamiz `println!` va satr ekranga chop etiladi.
+
+To'rtinchidan, satrni nuqtali vergul ( `;`) bilan tugatamiz, bu esa bu ifoda tugaganligini va keyingisi boshlashga tayyorligini bildiradi. Rust kodining aksariyat satrlari nuqtali vergul bilan tugaydi.
+
+# Kompilyatsiya va ishga tushirish alohida bosqichlardir
+Siz hozirgina yangi yaratilgan dasturni ishga tushirdingiz, shuning uchun jarayonning har bir bosqichini ko'rib chiqamiz.
+
+Rust dasturini ishga tushirishdan oldin uni Rust kompilyatoridan foydalanib, `rustc` buyruqni kiritib, unga manba faylingiz nomini kiritishingiz kerak, masalan:
+```bash
+$ rustc main.rs
+```
+Agar sizda C yoki C++ foni bo'lsa, bu `gcc` yoki ga o'xshashligini sezasiz `clang`. Muvaffaqiyatli kompilyatsiyadan so'ng Rust ikkilik bajariladigan faylni chiqaradi.
+
+`ls` Linux, macOS va Windows-dagi PowerShell- da siz shelldagi buyruqni kiritish orqali bajariladigan faylni ko'rishingiz mumkin . Linux va macOS-da siz ikkita faylni ko'rasiz. Windows-dagi PowerShell bilan siz CMD-dan foydalangan holda ko'rgan uchta faylni ko'rasiz.
+
+```bash
+$ ls
+main  main.rs
+```
+Windows-da CMD bilan siz quyidagilarni kiritasiz:
+```cmd
+> dir /B %= the /B option says to only show the file names =%
+main.exe
+main.pdb
+main.rs
+```
+Bu `.rs` kengaytmali manba kodi faylini, bajariladigan faylni ( Windowsda main.exe , lekin boshqa barcha platformalarda asosiy ) va Windows-dan foydalanganda `.pdb` kengaytmali disk raskadrovka ma'lumotlarini o'z ichiga olgan faylni ko'rsatadi. Bu yerdan siz asosiy yoki `main.exe` faylini ishga tushirasiz, masalan:
+```bash
+$ ./main # or .\main.exe on Windows
+```
+Agar `main.rs` sizning `"Hello, world!"` dastur, bu qator `Hello, world!` terminalingizga chop etadi.
+
+Agar siz Ruby, Python yoki JavaScript kabi dinamik tilni yaxshi bilsangiz, dasturni alohida bosqichlar sifatida kompilyatsiya qilish va ishga tushirishga odatlanmagan bo'lishingiz mumkin. Rust - bu oldindan tuzilgan kompilyatsiya tili, ya'ni siz dasturni kompilyatsiya qilishingiz va bajariladigan faylni boshqa birovga berishingiz mumkin va ular Rustni o'rnatmasdan ham uni ishga tushirishlari mumkin. Agar kimgadir .rb , .py yoki .js faylini bersangiz, ularda Ruby, Python yoki JavaScript ilovasi oʻrnatilgan boʻlishi kerak (mos ravishda). Ammo bu tillarda dasturni kompilyatsiya qilish va ishga tushirish uchun faqat bitta buyruq kerak bo'ladi. Til dizaynida hamma narsa o'zaro kelishuvdir.
+
+Oddiy dasturlar uchun shunchaki kompilyatsiya `rustc` qilish yaxshi, lekin loyihangiz o'sib borishi bilan siz barcha variantlarni boshqarishni va kodingizni almashishni osonlashtirishni xohlaysiz. Keyinchalik, biz sizni haqiqiy Rust dasturlarini yozishda yordam beradigan yuk vositasi bilan tanishtiramiz.
