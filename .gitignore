@@ -1,2 +1,5 @@
+# Node cached modules
 node_modules
-node_modules
+
+# Jetbrains IDEs
+.idea
