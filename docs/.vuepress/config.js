@@ -12,7 +12,10 @@ module.exports = {
             '',
             'muqaddima',
             'kirish',
-            'rust_1.0'
+            'rust_1.0',
+            'rust_1.1',
+            'rust_1.2',
+            'rust_1.3',
           ]
         }
       }

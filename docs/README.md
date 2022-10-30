@@ -7,10 +7,10 @@ actionText: Boshlash →
 actionLink: /guide/
 features:
 - title: Loyiha haqida
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
+  details: Bu loyiha O'zbekistonda IT sohasini rivonlantirish va Rust dasturlash tilini rivojlantirish, yuqori sifatli tizim dasturlarni yozish uchun yozilgan qo'llanma kitob.
 - title: Open Sourse
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
+  details: Bu Loyiha Open Sourse bo'lib buni asosiy sababi O'zbekistonda Open Sourseni rivojlantirish va shunga o'xshash loyihlar rivoji uchun.Bu loyiha asos bo'lishi mumkin.
 - title: Biz Haqimizda
-  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-footer: MIT litsenziyalangan | Mualliflik huquqi © 2018
+  details: Xinux Community loyihasi.Aossiy Open Sourse dasturchi Otabek Ismoilov.
+footer: MIT litsenziyasi | Mualliflik huquqi 2022  |  Xinux Community  | Otabek Ismoilov |  
 ---
