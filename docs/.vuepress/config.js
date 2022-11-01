@@ -5,6 +5,7 @@ module.exports = {
         nav: [
           { text: 'Asosiy', link: '/' },
           { text: 'Rust', link: '/guide/' },
+          { text: 'Dasturchi', link: 'https://github.com/ismoilovdevml' },
           { text: 'Github', link: 'https://github.com/ismoilovdevml' }
         ],
         sidebar: {
