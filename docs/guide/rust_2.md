@@ -76,4 +76,41 @@ Ushbu kod juda ko'p ma'lumotlarni o'z ichiga oladi, shuning uchun uni satr satrg
 ```rust
 use std::io;
 ```
+Keyingi safar ishga tushirganingizda `cargo build`, Cargo mavjud qutilar reestrini yangilaydi va siz `rand` ko'rsatgan yangi versiyaga muvofiq talablaringizni qayta ko'rib chiqadi.
 
+[Cargo](https://doc.rust-lang.org/cargo/) va uning ekotizimlari haqida 14-bobda ko'rib chiqamiz, lekin hozircha bu faqat bilishingiz kerak. cargo kutubxonalarni qayta ishlatishni juda osonlashtiradi, shuning uchun Rustaceans bir nechta paketlardan yig'ilgan kichikroq loyihalarni yozishga qodir.
+
+## Tasodifiy raqam yaratish
+Keling, taxmin qilish uchun raqamni yaratish uchun `rand` dan foydalanishni boshlaylik. Keyingi qadam 2-3 ro'yxatda ko'rsatilganidek, `src/main.rs` ni yangilashdir.
+
+Fayl nomi: src/main.rs
+
+```rust
+use std::io;
+use rand::Rng;
+
+fn main() {
+    println!("Raqamni toping!");
+
+    let secret_number = rand::thread_rng().gen_range(1..=100);
+
+    println!("Yashirin raqam: {secret_number}");
+
+    println!("Iltimos, taxminingizni kiriting.");
+
+    let mut guess = String::new();
+
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Satrni o‘qib bo‘lmadi");
+
+    println!("Taxminingiz {guess}");
+}
+```
+Birinchidan, biz line `use rand::Rng` qo'shamiz. Rng xususiyati tasodifiy sonlar generatorlari qo'llaydigan usullarni belgilaydi va bu xususiyat biz ushbu usullardan foydalanishimiz uchun tegishli bo'lishi kerak. 10-bobda xususiyatlar batafsil yoritiladi.
+
+Keyinchalik, o'rtada ikkita qator qo'shamiz. Birinchi qatorda biz `rand::thread_rng` funksiyasini chaqiramiz, bu bizga biz foydalanmoqchi bo'lgan tasodifiy sonlar generatorini beradi: joriy ijro chizig'i uchun mahalliy va operatsion tizim tomonidan urug'langan. Keyin tasodifiy sonlar generatorida `gen_range` usulini chaqiramiz. Bu usul biz foydalanish `rand::Rng` bayonoti bilan qamrab olgan `Rng` xususiyati bilan aniqlanadi. `gen_range` usuli argument sifatida diapazon ifodasini oladi va diapazonda tasodifiy son hosil qiladi. Bu yerda biz ishlatayotgan diapazon ifodasi `start..=end` shaklini oladi va pastki va yuqori chegaralarni qamrab oladi, shuning uchun 1 dan 100 gacha bo‘lgan raqamni so‘rash uchun `1..=100` ni belgilashimiz kerak.
+
+:::tip
+Eslatma: Siz qaysi xususiyatlardan foydalanishni va qaysi usullar va funktsiyalarni cratedan chaqirishni bila olmaysiz, shuning uchun har bir carteda foydalanish bo'yicha ko'rsatmalar mavjud. Cargo-ning yana bir qulay xususiyati shundaki, `cargo doc --open` buyrug'ini ishga tushirish sizning barcha bog'liqliklaringiz tomonidan taqdim etilgan hujjatlarni mahalliy sifatida tuzadi va uni brauzeringizda ochadi. Agar siz `rand` cartedagi boshqa funksiyalarga qiziqsangiz, masalan, `cargo doc --open`-ni ishga tushiring va chap tomondagi yon paneldagi `rand` tugmasini bosing.
+:::
