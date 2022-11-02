@@ -96,6 +96,62 @@ Ushbu kod o'yin nima ekanligini ko'rsatuvchi va foydalanuvchidan ma'lumot so'ras
 
 ## O'zgaruvchilar bilan qiymatlarni saqlash
 
+Keyinchalik, foydalanuvchi ma'lumotlarini saqlash uchun o'zgaruvchi yaratamiz , masalan:
+
+```rust
+    let mut guess = String::new();
+```
+Endi dastur qiziqarli bo'lib bormoqda! Bu kichik chiziqda juda ko'p narsa bor. `let` O'zgaruvchini yaratish uchun biz bayonotdan foydalanamiz . Mana yana bir misol:
+
+```rust
+let olmalar = 5;
+```
+Bu satr nomli yangi o'zgaruvchini yaratadi `olmalar` va uni 5 qiymatiga bog'laydi. Rustda o'zgaruvchilar standart bo'yicha o'zgarmasdir, ya'ni biz o'zgaruvchiga qiymat berganimizdan keyin qiymat o'zgarmaydi. Biz bu tushunchani 3-bobning “O‘zgaruvchilar va o‘zgaruvchanlik” `mut` bo‘limida batafsil muhokama qilamiz. O‘zgaruvchini o‘zgaruvchan qilish uchun o‘zgaruvchi nomi oldiga qo‘shamiz :
+
+```rust
+let olmalar = 5; // o'zgarmas
+let mut banan = 5; // o'zgaruvchan
+```
+
+::: tip
+Eslatma: `//` Sintaksis satr oxirigacha davom etadigan izohni boshlaydi. Rust izohlarda hamma narsani e'tiborsiz qoldiradi. Sharhlarni 3-bobda batafsilroq muhokama qilamiz .
+:::
+
+Taxmin qilish o'yini dasturiga qaytsak, endi bilasizki, `let mut guessu` ismli o'zgaruvchan o'zgaruvchini kiritadi `guess`. Teng belgisi ( `=`) Rustga biz hozir biror narsani o'zgaruvchiga bog'lamoqchi ekanligimizni bildiradi. Teng belgisining o'ng tomonida `guess` bog'langan qiymat mavjud bo'lib, bu funktsiyani chaqirish natijasi bo'lib `String::new`, a ning yangi nusxasini qaytaradi `String`. `String` standart kutubxona tomonidan taqdim etilgan satr turi bo'lib, u rivojlanadigan, `UTF-8` kodlangan matn bitidir.
+
+`::new` qatoridagi `::` sintaksisi `new` ning `String` tipidagi bog‘langan funksiya ekanligini bildiradi.
+Bog'langan funktsiya - bu turda amalga oshiriladigan funksiya, bu holda `String`.
+Ushbu `new` funksiya yangi, bo'sh qatorni yaratadi.
+Ko'p turdagi `new` funksiyani topasiz, chunki bu qandaydir yangi qiymatni yaratadigan funksiyaning umumiy nomi.
+
+To'liq holda, `let mut guess = String::new();` line hozirda `String`ning yangi, bo'sh nusxasiga bog'langan o'zgaruvchan o'zgaruvchini yaratdi. Vou!
+
+## Foydalanuvchi ma'lumotlarini qabul qilish
+Eslatib o'tamiz, biz standart kutubxonadan `std::io;` dasturning birinchi qatorida. Endi biz `io` modulidan `stdin` funksiyasini chaqiramiz, bu bizga foydalanuvchi kiritishini boshqarish imkonini beradi:
+
+```rust
+    io::stdin()
+        .read_line(&mut guess)
+```
+Agar biz dasturning boshida `std::io` yordamida `io` kutubxonasini import qilmagan bo‘lsak, bu funksiya chaqiruvini `std::io::stdin` sifatida yozish orqali funksiyadan foydalanishimiz mumkin edi.
+`stdin` funktsiyasi `std::io::Stdin` misolini qaytaradi, bu sizning terminalingiz uchun standart kirish uchun tutqichni ifodalovchi tur.
+
+Keyinchalik, `.read_line(&mut guess)` qatori foydalanuvchidan kiritish uchun standart kiritishdagi `read_line` usulini chaqiradi.
+Shuningdek, biz `&mut guess` ni `read_line` ga argument sifatida o'tkazamiz, bu foydalanuvchi kiritgan ma'lumotni qaysi qatorda saqlash kerakligini aytadi.
+`read_line` ning to'liq vazifasi foydalanuvchi kiritgan har qanday narsani standart kiritishga olish va uni satrga qo'shish (uning mazmunini qayta yozmasdan), shuning uchun biz ushbu qatorni argument sifatida o'tkazamiz.
+String argumenti o'zgaruvchan bo'lishi kerak, shuning uchun usul string tarkibini o'zgartirishi mumkin.
+
+`&` bu argument ma'lumotnoma ekanligini bildiradi, bu sizga kodingizning bir nechta qismlariga ushbu ma'lumotlarni xotiraga bir necha marta nusxalash kerak bo'lmasdan bitta ma'lumotga kirish imkonini beradi.Ma'lumotnomalar murakkab xususiyat bo'lib, Rustning asosiy afzalliklaridan biri havolalardan foydalanish qanchalik xavfsiz va oson ekanligidir.
+Ushbu dasturni tugatish uchun ko'p tafsilotlarni bilishingiz shart emas. Hozircha siz bilishingiz kerak bo'lgan narsa shundaki, o'zgaruvchilar singari, havolalar ham standart bo'yicha o'zgarmasdir.
+Demak, uni o'zgaruvchan qilish uchun `&gues` o'rniga `&mut guess` yozish kerak. (4-bobda havolalar batafsilroq tushuntiriladi.)
+
+## Potensial nosozlikni Natija turi bilan hal qilish
+
+Biz hali ham ushbu kod qatori ustida ishlayapmiz.Biz hozir matnning uchinchi qatorini muhokama qilmoqdamiz, lekin u hali ham bitta mantiqiy kod qatorining bir qismi ekanligini unutmang.Keyingi qism bu usul:
+
+```rust
+        .expect("Failed to read line");
+```
 
 <!-- Keyingi safar ishga tushirganingizda `cargo build`, Cargo mavjud qutilar reestrini yangilaydi va siz `rand` ko'rsatgan yangi versiyaga muvofiq talablaringizni qayta ko'rib chiqadi.
 
