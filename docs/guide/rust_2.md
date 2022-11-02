@@ -27,4 +27,53 @@ edition = "2021"
 
 [dependencies]
 ```
+1-bobda ko'rganingizdek, `cargo new` "Hello, world!" sizning dasturingiz. `src/main.rs` faylini ko'rishingiz mumkin:
+
+Fayl nomi: src/main.rs
+
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+Keling, ushbu "Hello, world!" dasturni yarating va `cargo run`  buyrug'i yordamida ishga tushiring :
+
+```bash
+$ cargo run
+   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.50s
+     Running `target/debug/guessing_game`
+Hello, world!
+```
+Buyruq `run` loyihani tezda takrorlash kerak bo'lganda foydali bo'ladi, biz ushbu o'yinda qilganimizdek, keyingisiga o'tishdan oldin har bir iteratsiyani tezda sinab ko'ramiz.
+
+`src/main.rs` faylini qayta oching. Siz ushbu fayldagi barcha kodlarni yozasiz.
+
+## Guessga ishlov berish
+Taxmin qilish o'yini dasturining birinchi qismi foydalanuvchi kiritishini so'raydi, ushbu kiritishni qayta ishlaydi va kirish kutilgan shaklda ekanligini tekshiradi. Boshlash uchun biz o'yinchiga taxmin kiritishiga ruxsat beramiz. 2-1 ro'yxatidagi kodni `src/main.rs` ga kiriting .
+
+Fayl nomi: src/main.rs
+
+```rust
+use std::io;
+
+fn main() {
+    println!("Raqamni toping!");
+
+    println!("Iltimos, taxminingizni kiriting.");
+
+    let mut guess = String::new();
+
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Satrni o‘qib bo‘lmadi");
+
+    println!("Taxminingiz {guess}");
+}
+```
+Ushbu kod juda ko'p ma'lumotlarni o'z ichiga oladi, shuning uchun uni satr satrga o'tkazamiz. Foydalanuvchi kiritishini olish va natijani chiqish sifatida chop etish uchun biz `io` kirish/chiqish kutubxonasini qamrab olishimiz kerak. Kutubxona quyidagi `io` nom bilan ma'lum bo'lgan standart kutubxonadan keladi `std:`
+
+```rust
+use std::io;
+```
 
