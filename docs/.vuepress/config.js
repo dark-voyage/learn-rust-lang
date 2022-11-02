@@ -17,6 +17,7 @@ module.exports = {
             'rust_1.1',
             'rust_1.2',
             'rust_1.3',
+            'rust_2',
           ]
         }
       }

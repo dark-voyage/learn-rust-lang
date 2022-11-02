@@ -108,3 +108,30 @@ Keling, cargo haqida shu paytgacha o'rganganlarimizni takrorlaymiz:
 * Biz `cargo check` yordamida xatolarni tekshirish uchun ikkilik ishlab chiqarmasdan loyihani qurishimiz mumkin.
 * Qurilish natijasini bizning kodimiz bilan bir xil katalogda saqlash o'rniga, Cargo uni `target/debug`  katalogida saqlaydi.
 Cargo-dan foydalanishning qo'shimcha afzalligi shundaki, qaysi operatsion tizimda ishlayotganingizdan qat'i nazar, buyruqlar bir xil bo'ladi. Shunday qilib, biz endi Linux va MacOS uchun Windows-ga nisbatan maxsus ko'rsatmalar bermaymiz.
+
+## Loyihani Reliz qilish
+
+Loyihangiz nihoyat chiqarishga tayyor bo'lgach, uni optimallashtirish bilan kompilyatsiya qilish uchun `cargo build --release` dan foydalanishingiz mumkin. Ushbu buyruq `target/debug` o'rniga `target/release` da bajariladigan faylni yaratadi. Optimizatsiya Rust kodingizni tezroq ishga  tushiradi, lekin bu kompilyatsiya vaqtini uzaytiradi. Shuning uchun ikkita turli profil mavjud: biri tez va tez-tez qayta tiklamoqchi bo'lganingizda ishlab chiqish uchun, ikkinchisi esa oxirgi dasturni yaratish uchun siz foydalanuvchiga qayta tiklanmaydigan va shu qadar tez ishlaydi. mumkin. Agar siz kodingizning ishlash vaqtini taqqoslayotgan bo'lsangiz, `cargo build --release` ni ishga tushiring va `target/release` da bajariladigan dastur bilan taqqoslang.
+
+## Konventsiya sifatida cargo
+Oddiy loyihalar bilan Cargo shunchaki foydalanishdan ko'ra unchalik katta foyda keltirmaydi `rustc`, lekin dasturlaringiz murakkablashgani sayin u o'z qiymatini isbotlaydi. Dasturlar bir nechta fayllarga o'sib ulg'ayganida yoki ularga bog'liqlik kerak bo'lsa, Cargo-ga qurilishni muvofiqlashtirishga ruxsat berish ancha oson bo'ladi.
+
+Loyiha oddiy bo'lsa ham `hello_cargo`, u endi Rust karyerangizning qolgan qismida foydalanadigan haqiqiy asboblarning ko'p qismini ishlatadi. Haqiqatan ham, mavjud loyihalar ustida ishlash uchun Git yordamida kodni tekshirish, ushbu loyiha katalogiga oʻzgartirish va qurish uchun quyidagi buyruqlardan foydalanishingiz mumkin:
+
+```bash
+$ git clone example.org/someproject
+$ cd someproject
+$ cargo build
+```
+Cargo haqida ko'proq ma'lumot olish uchun uning [qo'llanmasini](https://doc.rust-lang.org/cargo/) ko'rib chiqing .
+
+## Xulosa
+Siz allaqachon Rust sayohatingizni ajoyib boshladingiz! Ushbu bobda siz quyidagilarni o'rgandingiz:
+
+* Rustning so'nggi barqaror versiyasini o'rnating `rustup`
+* Rustning yangi versiyasiga yangilang
+* Mahalliy o'rnatilgan hujjatlarni oching
+* “Hello, world!” deb yozing va ishga tushiring. `rustc` to'g'ridan-to'g'ri foydalanish dasturi
+* Cargo konventsiyalaridan foydalangan holda yangi loyiha yarating va ishga tushiring
+
+Bu Rust kodini o'qish va yozishga odatlanish uchun yanada muhimroq dastur yaratish uchun ajoyib vaqt. Shunday qilib, 2-bobda biz taxminiy o'yin dasturini tuzamiz. Agar siz Rust-da umumiy dasturlash tushunchalari qanday ishlashini o'rganishni afzal ko'rsangiz, 3-bobga qarang va keyin 2-bobga qayting.
