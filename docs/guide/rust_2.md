@@ -76,11 +76,32 @@ Ushbu kod juda ko'p ma'lumotlarni o'z ichiga oladi, shuning uchun uni satr satrg
 ```rust
 use std::io;
 ```
-Keyingi safar ishga tushirganingizda `cargo build`, Cargo mavjud qutilar reestrini yangilaydi va siz `rand` ko'rsatgan yangi versiyaga muvofiq talablaringizni qayta ko'rib chiqadi.
+Odatda, Rust standart kutubxonada belgilangan elementlar to'plamiga ega bo'lib, u har bir dastur doirasiga kiradi. Ushbu to'plam muqaddima deb ataladi va siz undagi hamma narsani [standart kutubxona hujjatlarida](https://doc.rust-lang.org/std/prelude/index.html) ko'rishingiz mumkin.
 
-[Cargo](https://doc.rust-lang.org/cargo/) va uning ekotizimlari haqida 14-bobda ko'rib chiqamiz, lekin hozircha bu faqat bilishingiz kerak. cargo kutubxonalarni qayta ishlatishni juda osonlashtiradi, shuning uchun Rustaceans bir nechta paketlardan yig'ilgan kichikroq loyihalarni yozishga qodir.
+Agar siz foydalanmoqchi bo'lgan tur muqaddimada bo'lmasa, siz ushbu turni foydalanish bayonoti bilan aniq ko'rsatishingiz kerak. `std::io` kutubxonasidan foydalanish sizga bir qator foydali xususiyatlarni, jumladan, foydalanuvchi kiritishini qabul qilish imkoniyatini beradi.
 
-## Tasodifiy raqam yaratish
+1-bobda ko'rganingizdek, mainfunktsiya dasturga kirish nuqtasidir:
+```rust
+fn main() {
+```
+Sintaksis `fn` yangi funktsiyani e'lon qiladi, qavslar, `()`, parametrlar yo'qligini bildiradi va jingalak qavs, `{`, funktsiyaning tanasini boshlaydi.
+
+Siz 1-bobda ham bilib olganingizdek `println!`, ekranga satrni chop etadigan makros:
+```rust
+    println!("Raqamni toping!");
+
+    println!("Iltimos, taxminingizni kiriting.");
+```
+Ushbu kod o'yin nima ekanligini ko'rsatuvchi va foydalanuvchidan ma'lumot so'rashni so'rashni chop etadi.
+
+## O'zgaruvchilar bilan qiymatlarni saqlash
+
+
+<!-- Keyingi safar ishga tushirganingizda `cargo build`, Cargo mavjud qutilar reestrini yangilaydi va siz `rand` ko'rsatgan yangi versiyaga muvofiq talablaringizni qayta ko'rib chiqadi.
+
+[Cargo](https://doc.rust-lang.org/cargo/) va uning ekotizimlari haqida 14-bobda ko'rib chiqamiz, lekin hozircha bu faqat bilishingiz kerak. cargo kutubxonalarni qayta ishlatishni juda osonlashtiradi, shuning uchun Rustaceans bir nechta paketlardan yig'ilgan kichikroq loyihalarni yozishga qodir. -->
+
+<!-- ## Tasodifiy raqam yaratish
 Keling, taxmin qilish uchun raqamni yaratish uchun `rand` dan foydalanishni boshlaylik. Keyingi qadam 2-3 ro'yxatda ko'rsatilganidek, `src/main.rs` ni yangilashdir.
 
 Fayl nomi: src/main.rs
@@ -114,3 +135,30 @@ Keyinchalik, o'rtada ikkita qator qo'shamiz. Birinchi qatorda biz `rand::thread_
 :::tip
 Eslatma: Siz qaysi xususiyatlardan foydalanishni va qaysi usullar va funktsiyalarni cratedan chaqirishni bila olmaysiz, shuning uchun har bir carteda foydalanish bo'yicha ko'rsatmalar mavjud. Cargo-ning yana bir qulay xususiyati shundaki, `cargo doc --open` buyrug'ini ishga tushirish sizning barcha bog'liqliklaringiz tomonidan taqdim etilgan hujjatlarni mahalliy sifatida tuzadi va uni brauzeringizda ochadi. Agar siz `rand` cartedagi boshqa funksiyalarga qiziqsangiz, masalan, `cargo doc --open`-ni ishga tushiring va chap tomondagi yon paneldagi `rand` tugmasini bosing.
 :::
+
+Ikkinchi yangi qator maxfiy raqamni chop etadi. Bu dasturni ishlab chiqishda uni sinab ko'rishimiz uchun foydalidir, lekin biz uni oxirgi versiyadan o'chirib tashlaymiz. Agar dastur boshlanishi bilanoq javobni chop etsa, bu unchalik o'yin emas!
+
+Dasturni bir necha marta ishga tushirishga harakat qiling:
+
+```bash
+$ cargo run
+   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53s
+     Running `target/debug/guessing_game`
+Raqamni toping!
+Yashirin raqam: 7
+Iltimos, taxminingizni kiriting.
+4
+Taxminingiz: 4
+
+$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+     Running `target/debug/guessing_game`
+Raqamni toping!
+Yashirin raqam: 83
+Iltimos, taxminingizni kiriting.
+5
+Taxminingiz: 5
+```
+Siz turli xil tasodifiy raqamlarni olishingiz kerak va ularning barchasi 1 dan 100 gacha raqamlar bo'lishi kerak. Ajoyib ish!
+ -->
