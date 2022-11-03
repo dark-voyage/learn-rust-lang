@@ -150,7 +150,43 @@ Demak, uni o'zgaruvchan qilish uchun `&gues` o'rniga `&mut guess` yozish kerak. 
 Biz hali ham ushbu kod qatori ustida ishlayapmiz.Biz hozir matnning uchinchi qatorini muhokama qilmoqdamiz, lekin u hali ham bitta mantiqiy kod qatorining bir qismi ekanligini unutmang.Keyingi qism bu usul:
 
 ```rust
-        .expect("Failed to read line");
+        .expect("Satrni o‘qib bo‘lmadi");
+```
+Biz ushbu kodni quyidagicha yozishimiz mumkin edi:
+```rust
+io::stdin().read_line(&mut guess).expect("Satrni o‘qib bo‘lmadi");
+```
+Biroq, bitta uzun qatorni o'qish qiyin, shuning uchun uni bo'lish yaxshidir. Ko'pincha `.method_name`() sintaksisi bilan methodni chaqirganda uzun qatorlarni ajratishga yordam berish uchun yangi qator va boshqa bo'shliqlarni kiritish oqilona. Endi bu chiziq nima qilishini muhokama qilaylik.
+
+Yuqorida aytib o'tilganidek, `read_line` foydalanuvchi kiritgan barcha narsani biz unga o'tkazgan qatorga qo'yadi, lekin u Natija qiymatini ham qaytaradi. `Result` ko'pincha [enum](https://doc.rust-lang.org/book/ch06-00-enums.html) deb ataladigan ro'yxat bo'lib, u bir nechta mumkin bo'lgan holatlardan birida bo'lishi mumkin. Har bir mumkin bo'lgan holatni variant deb ataymiz.
+
+6-bobda enumlar batafsilroq yoritiladi. Ushbu `Result` turlarining maqsadi xatolarga oid ma'lumotlarni kodlashdir.
+
+`Result` variantlari `Ok` va `Err`. `Ok` varianti operatsiya muvaffaqiyatli bo'lganligini bildiradi va `Ok` ichida muvaffaqiyatli yaratilgan qiymat mavjud.
+`Err` varianti operatsiya bajarilmaganligini bildiradi va `Err` operatsiya qanday yoki nima uchun bajarilmagani haqida ma'lumotni o'z ichiga oladi.
+
+`Result` turidagi qiymatlar, har qanday turdagi qiymatlar kabi, ularda aniqlangan usullarga ega.
+`Result` misolida siz tekshirib ko'rishingiz mumkin bo'lgan [`expect method`](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect) mavjud.
+Agar `Result`ning ushbu namunasi `Err` qiymati bo'lsa, `expect` dasturning ishdan chiqishiga olib keladi va `expect` uchun argument sifatida siz uzatgan xabarni ko'rsatadi.
+Agar `read_line` usuli `Err`ni qaytarsa, bu asosiy operatsion tizimdan kelgan xato natijasi bo'lishi mumkin.
+Agar `Result`ning ushbu namunasi `Ok` qiymati bo'lsa, `expect` `Ok` ushlab turgan qaytish qiymatini oladi va siz undan foydalanishingiz uchun aynan shu qiymatni sizga qaytaradi. Bunday holda, bu qiymat foydalanuvchi kiritishidagi baytlar soni.
+
+Agar siz `expect`ga murojaat qilmasangiz, dastur tuziladi, lekin siz ogohlantirish olasiz:
+
+```bash
+$ cargo build
+   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
+warning: unused `Result` that must be used
+  --> src/main.rs:10:5
+   |
+10 |     io::stdin().read_line(&mut guess);
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_must_use)]` on by default
+   = note: this `Result` may be an `Err` variant, which should be handled
+
+warning: `guessing_game` (bin "guessing_game") generated 1 warning
+    Finished dev [unoptimized + debuginfo] target(s) in 0.59s
 ```
 
 <!-- Keyingi safar ishga tushirganingizda `cargo build`, Cargo mavjud qutilar reestrini yangilaydi va siz `rand` ko'rsatgan yangi versiyaga muvofiq talablaringizni qayta ko'rib chiqadi.
