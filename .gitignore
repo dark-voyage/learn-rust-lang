@@ -1,6 +1,7 @@
 # Node cached modules
 node_modules
 .yarn
+docs/.vuepress/dist
 
 # Jetbrains IDEs
 .idea
