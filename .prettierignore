@@ -1,3 +1,6 @@
 node_modules
-docs/.vuepress/.temp
-docs/.vuepress/.cache
+.next
+.swc
+.idea
+license.md
+pnpm-lock.yaml

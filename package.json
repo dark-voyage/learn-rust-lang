@@ -1,41 +1,33 @@
 {
   "name": "learn-rust-lang",
   "version": "1.0.0",
-  "description": "Rust dasturlash tili uchun yaratilgan wiki qo'llanma",
+  "description": "Rust uchun yozilgan @ismoildev kitob va qo'llanmalari",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:fmt": "prettier --check --write .",
-    "docs:build": "vuepress build docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rust-lang-uz/learn-rust-lang.git"
+    "dev": "next",
+    "debug": "NODE_OPTIONS='--inspect' next",
+    "start": "next start",
+    "build": "next build",
+    "format": "prettier --check --write .",
+    "format:check": "prettier --check .",
+    "lint": "next lint --fix",
+    "lint:check": "next lint"
   },
   "keywords": [
     "rust",
-    "rust-language",
     "rust-lang",
-    "rust-lang-uz",
-    "rust-lang-uzbek"
+    "rust-lang-book"
   ],
-  "author": "Otabek Ismoilov",
+  "author": "Ismoilov Otabek",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rust-lang-uz/learn-rust-lang/issues"
+  "dependencies": {
+    "next": "^13.0.2",
+    "nextra": "^1.1.0",
+    "nextra-theme-docs": "^1.2.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  "homepage": "https://github.com/rust-lang-uz/learn-rust-lang#readme",
   "devDependencies": {
-    "@vuepress/client": "2.0.0-beta.53",
-    "@vuepress/plugin-docsearch": "^2.0.0-beta.53",
-    "@vuepress/plugin-nprogress": "^2.0.0-beta.53",
-    "@vuepress/plugin-pwa": "^2.0.0-beta.53",
-    "@vuepress/plugin-pwa-popup": "2.0.0-beta.53",
-    "@vuepress/plugin-search": "^2.0.0-beta.53",
-    "@vuepress/plugin-toc": "^2.0.0-beta.53",
-    "@vuepress/theme-default": "^2.0.0-beta.53",
-    "prettier": "^2.5.1",
-    "vuepress": "^2.0.0-beta.53",
-    "vuepress-vite": "2.0.0-beta.53"
+    "prettier": "^2.7.1"
   }
 }
