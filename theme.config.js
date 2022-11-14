@@ -1,4 +1,3 @@
-// theme.config.js
 export default {
   projectLink: "https://github.com/rust-lang-uz/learn-rust-lang",
   docsRepositoryBase:
@@ -6,8 +5,9 @@ export default {
   titleSuffix: " – Rust Uzbekistan",
   nextLinks: true,
   prevLinks: true,
+  floatTOC: true,
   search: true,
-  customSearch: null, // customizable, you can use algolia for example
+  customSearch: null,
   darkMode: true,
   footer: true,
   footerText: `MIT ${new Date().getFullYear()} © Rust Uzbekistan.`,
