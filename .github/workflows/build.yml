@@ -1,8 +1,6 @@
 name: Build CI
 
-on:
-  push:
-    branches: ['main']
+on: [push, pull_request]
 
 env:
   REGISTRY: ghcr.io
