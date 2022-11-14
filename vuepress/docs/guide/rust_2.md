@@ -291,21 +291,33 @@ warning: `guessing_game` (bin "guessing_game") generated 1 warning
     Finished dev [unoptimized + debuginfo] target(s) in 0.59s
 ```
 
-Rust  `read_line` dan qaytarilgan `Result` qiymatidan foydalanmaganligingiz haqida ogohlantiradi, bu dastur mumkin bo'lgan xatoni hal qilmaganligini ko'rsatadi.
+Rust `read_line` dan qaytarilgan `Result` qiymatidan foydalanmaganligingiz
+haqida ogohlantiradi, bu dastur mumkin bo'lgan xatoni hal qilmaganligini
+ko'rsatadi.
 
-Ogohlantirish jarayonning to'g'ri yo'li aslida xatolarni ko'rib chiqishni yozishdir, ammo bizning holatlarimizda muammo yuzaga kelganda biz ushbu dasturni ishdan to'xtatishni xohlaymiz, shuning uchun biz `expect`dan foydalanishimiz mumkin.
+Ogohlantirish jarayonning to'g'ri yo'li aslida xatolarni ko'rib chiqishni
+yozishdir, ammo bizning holatlarimizda muammo yuzaga kelganda biz ushbu dasturni
+ishdan to'xtatishni xohlaymiz, shuning uchun biz `expect`dan foydalanishimiz
+mumkin.
 
 Xatolarni tiklash haqida 9-bobda bilib olasiz.
 
 ## Println bilan qiymatlarni chop etish! Oʻrin egalari
-Yopuvchi jingalak qavsdan tashqari, kodda hozirgacha muhokama qilinadigan yana bitta satr mavjud:
+
+Yopuvchi jingalak qavsdan tashqari, kodda hozirgacha muhokama qilinadigan yana
+bitta satr mavjud:
+
 ```rust
     println!("Taxminingiz: {guess}");
 ```
-Ushbu satr foydalanuvchi kiritishini o'z ichiga olgan qatorni chop etadi.
-`{}` jingalak qavslar toʻplami oʻrnini egallaydi: `{}` qiymatini oʻrnida ushlab turadigan qisqichbaqa qisqichlari deb tasavvur qiling.
-Siz jingalak qavslar yordamida bir nechta qiymatlarni chop etishingiz mumkin: jingalak qavslarning birinchi to'plami format qatoridan keyin sanab o'tilgan birinchi qiymatni, ikkinchi to'plam ikkinchi qiymatni ushlab turadi va hokazo.
-`println`-ga bitta chiqarishda bir nechta qiymatlarni chop etish! shunday ko'rinadi:
+
+Ushbu satr foydalanuvchi kiritishini o'z ichiga olgan qatorni chop etadi. `{}`
+jingalak qavslar toʻplami oʻrnini egallaydi: `{}` qiymatini oʻrnida ushlab
+turadigan qisqichbaqa qisqichlari deb tasavvur qiling. Siz jingalak qavslar
+yordamida bir nechta qiymatlarni chop etishingiz mumkin: jingalak qavslarning
+birinchi to'plami format qatoridan keyin sanab o'tilgan birinchi qiymatni,
+ikkinchi to'plam ikkinchi qiymatni ushlab turadi va hokazo. `println`-ga bitta
+chiqarishda bir nechta qiymatlarni chop etish! shunday ko'rinadi:
 
 ```rust
 let x = 5;
@@ -313,10 +325,13 @@ let y = 10;
 
 println!("x = {} va y = {}", x, y);
 ```
+
 Bu kod `x = 5 va y = 10` ni chop etadi.
 
 ## Birinchi qismni sinovdan o'tkazish
-Keling, taxmin qilish o'yinining birinchi qismini sinab ko'raylik. `cargo run` yordamida ishga tushiring:
+
+Keling, taxmin qilish o'yinining birinchi qismini sinab ko'raylik. `cargo run`
+yordamida ishga tushiring:
 
 ```bash
 $ cargo run
@@ -328,7 +343,9 @@ Iltimos, taxminingizni kiriting.
 6
 Taxminigiz: 6
 ```
-Shu nuqtada, o'yinning birinchi qismi tugadi: biz klaviaturadan ma'lumotlarni olamiz va keyin uni chop qilamiz.
+
+Shu nuqtada, o'yinning birinchi qismi tugadi: biz klaviaturadan ma'lumotlarni
+olamiz va keyin uni chop qilamiz.
 
 <!-- Keyingi safar ishga tushirganingizda `cargo build`, Cargo mavjud qutilar reestrini yangilaydi va siz `rand` ko'rsatgan yangi versiyaga muvofiq talablaringizni qayta ko'rib chiqadi.
 

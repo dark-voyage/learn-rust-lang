@@ -17,6 +17,6 @@ pnpm install
 
 Endi ishga tushuramiz:
 
-```bash 
+```bash
 pnpm run dev
 ```
