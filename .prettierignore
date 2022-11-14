@@ -2,5 +2,6 @@ node_modules
 .next
 .swc
 .idea
+out
 license.md
 pnpm-lock.yaml
