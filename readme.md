@@ -1,8 +1,8 @@
 # Rust dasturlash tilini bo'yicha o'zbekcha kitob
 
 Rust Dasturlash tilini o'rganish uchun yozilgan web saytni manba kodlari. Kodlar
-hammaga ochiq Open Sourse hisoblanadi. Bu loyiha boshqa shunga o'xshash loyihalr
-uchun xam asos va yordam bo'ladi deb umid qilaman. Loyiha Nextra Next.js
+hammaga ochiq Open Sourse hisoblanadi. Bu loyiha boshqa shunga o'xshash loyihalar
+uchun xam asos va yordam bo'ladi deb umid qilaman. Loyiha Nextra Next.js da
 yozilgan. Loyihani ishga tushirish Loyihani clone qilib oling:
 
 ```bash
