@@ -1,1 +1,1 @@
-<h1 align="center">Xush Kelibsiz!</h1>
+<h1 align="center">Xush Kelibsiz</h1>
