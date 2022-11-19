@@ -1,0 +1,19 @@
+[book]
+title = "Rust Dasturlash Tili"
+authors = ["Otabek Ismoilov"]
+description = "@ismoilovdev tomonidan Rust Dasturlash tili haqida yozilgan qo'llanma."
+language = "uz"
+multilingual = false
+src = "src"
+
+[output.html]
+default-theme = "dark"
+preferred-dark-theme = "ayu"
+git-repository-url = "https://github.com/rust-lang-uz/learn-rust-lang"
+git-repository-icon = "fa-github"
+cname = "alt.rust-lang.uz"
+edit-url-template = "https://github.com/rust-lang-uz/learn-rust-lang/edit/master/src/{path}"
+no-section-label = true
+
+[output.html.fold]
+enable = true
