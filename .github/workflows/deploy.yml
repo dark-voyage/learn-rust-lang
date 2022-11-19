@@ -24,6 +24,7 @@ jobs:
 
       - run: mdbook build
 
+      # Deploy to GitHub Pages
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}
